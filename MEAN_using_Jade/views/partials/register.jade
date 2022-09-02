@@ -1,0 +1,21 @@
+.page-header
+  h1 User Registration
+form(ng-submit='register.regUser(regData);')
+  label Email: 
+  input.form-control(type='text' placeholder='please enter name' name='email' ng-model='register.regData.email' br='')
+  label Username 
+  input.form-control(type='text' placeholder='please enter username' name='username' ng-model='register.regData.username' br='')
+  label Password: 
+  input.form-control(type='password' placeholder='please enter password' name='password' ng-model='register.regData.password')
+  br
+  button.btn.btn-primary(type='submit') Register
+br
+.jumbotron.text-center(ng-show='register.loading')
+  span.glyphicon.glyphicon-repeat.spinner
+  p Loading.....
+br
+.row.show-hide.message(ng-show='register.successMsg')
+  .alert.alert-success {{register.successMsg}}
+br
+.row.show-hide.message(ng-show='register.errorMsg')
+  .alert.alert-danger {{register.errorMsg}}

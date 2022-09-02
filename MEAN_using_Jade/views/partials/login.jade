@@ -1,0 +1,19 @@
+.page-header
+  h1 User Login
+form(ng-submit='main.doLogin(loginData);')
+  label Username 
+  input.form-control(type='text' placeholder='please enter username' name='username' ng-model='main.loginData.username' br='')
+  label Password: 
+  input.form-control(type='password' placeholder='please enter password' name='password' ng-model='main.loginData.password')
+  br
+  button.btn.btn-primary(type='submit') Login
+br
+.jumbotron.text-center(ng-show='register.loading')
+  span.glyphicon.glyphicon-repeat.spinner
+  p Loading.....
+br
+.row.show-hide.message(ng-show='main.successMsg')
+  .alert.alert-success {{main.successMsg}}
+br
+.row.show-hide.message(ng-show='main.errorMsg')
+  .alert.alert-danger {{main.errorMsg}}
